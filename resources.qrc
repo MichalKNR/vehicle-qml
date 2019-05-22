@@ -4,9 +4,6 @@
         <file alias="backend.cpp">backend.cpp</file>
         <file>qml/main.qml</file>
         <file>backend.h</file>
-        <file>moc_backend.cpp</file>
-        <file>moc_predefs.h</file>
-        <file>qrc_resources.cpp</file>
         <file>samochodzik.png</file>
     </qresource>
 </RCC>

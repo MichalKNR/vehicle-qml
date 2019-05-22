@@ -6,20 +6,24 @@ AppData::AppData(QObject* parent) : QObject (parent)
 }
 
 void AppData::newRequest(QJsonDocument doc) {
-    qDebug() << "AppData::newRequest";
     QString valueId = doc.object().value("valueId").toString();
+    qDebug() << "AppData::newRequest" << valueId;
     if (valueId == "Speed") {
         m_value_speed = doc.object().value("value").toInt();
         qDebug() << "m_value_speed" << m_value_speed;
         emit valueSpeedChanged();
     } else if (valueId == "SteerTemperature") {
-        valueSteerTemperature = doc.object().value("value").toInt();
+        m_valueSteerTemperature = doc.object().value("value").toInt();
+        emit valueSteerTemperatureChanged();
     } else if (valueId == "SteerAccurancy") {
-        valueSteerAccurancy = doc.object().value("value").toInt();
+        m_valueSteerAccurancy = doc.object().value("value").toInt();
+        emit valueSteerAccurancyChanged();
     } else if (valueId == "EngineTemperature") {
-        valueEngineTemperature = doc.object().value("value").toInt();
+        m_valueEngineTemperature = doc.object().value("value").toInt();
+        emit valueEngineTemperatureChanged();
     } else if (valueId == "EngineAccurancy") {
-        valueEngineAccurancy = doc.object().value("value").toInt();
+        m_valueEngineAccurancy = doc.object().value("value").toInt();
+        emit valueEngineAccuranacyChanged();
     } else {
         qDebug() << "AppData::newRequest unknown valueId" << valueId;
     }
@@ -29,6 +33,7 @@ void AppData::newRequest(QJsonDocument doc) {
 void AppData::setServerConnected(bool connected) {
     qDebug() << "server connected = " << connected;
     m_server_connected = connected;
+    emit serverConnectedChanged();
 }
 
 int AppData::getValueSpeed() {
@@ -36,17 +41,17 @@ int AppData::getValueSpeed() {
 }
 
 int AppData::getValueSteerTemperature() {
-    return valueSteerTemperature;
+    return m_valueSteerTemperature;
 }
 
 int AppData::getValueSteerAccurancy() {
-    return valueSteerAccurancy;
+    return m_valueSteerAccurancy;
 }
 
 int AppData::getValueEngineTemperature() {
-    return valueEngineTemperature;
+    return m_valueEngineTemperature;
 }
 
 int AppData::getValueEngineAccurancy() {
-    return valueEngineAccurancy;
+    return m_valueEngineAccurancy;
 }
