@@ -17,14 +17,13 @@ public:
     Q_PROPERTY(int valueSteerAccurancy MEMBER m_valueSteerAccurancy NOTIFY valueSteerAccurancyChanged)
     Q_PROPERTY(int valueEngineTemperature MEMBER m_valueEngineTemperature NOTIFY valueEngineTemperatureChanged)
     Q_PROPERTY(int valueEngineAccurancy MEMBER m_valueEngineAccurancy NOTIFY valueEngineAccuranacyChanged)
+    Q_PROPERTY(int valueBatteryTemperature MEMBER m_valueBatteryTemperature NOTIFY valueBatteryTemperatureChanged)
+    Q_PROPERTY(int valueBatteryAccurancy MEMBER m_valueBatteryAccurancy NOTIFY valueBatteryAccuranacyChanged)
+    Q_PROPERTY(int valueBatteryPercent MEMBER m_valueBatteryPercent NOTIFY valueBatteryPercentChanged)
+    Q_PROPERTY(bool valueUnderLightsOn MEMBER m_valueUnderLightsOn NOTIFY valueUnderLightsOnChanged)
+    Q_PROPERTY(bool valueCheckEngineOn MEMBER m_valueCheckEngineOn NOTIFY valueCheckEngineOnChanged)
+    Q_PROPERTY(bool valueAlarmOn MEMBER m_valueAlarmOn NOTIFY valueAlarmOnChanged)
 
-
-
-    int getValueSpeed();
-    int getValueSteerTemperature();
-    int getValueSteerAccurancy();
-    int getValueEngineTemperature();
-    int getValueEngineAccurancy();
 signals:
     void updateView();
     /* Q_PROPERTY */
@@ -34,6 +33,12 @@ signals:
     void valueSteerAccurancyChanged();
     void valueEngineTemperatureChanged();
     void valueEngineAccuranacyChanged();
+    void valueBatteryTemperatureChanged();
+    void valueBatteryAccuranacyChanged();
+    void valueBatteryPercentChanged();
+    void valueUnderLightsOnChanged();
+    void valueCheckEngineOnChanged();
+    void valueAlarmOnChanged();
 public slots:
     void setServerConnected(bool connected);
     void newRequest(QJsonDocument);
@@ -44,6 +49,13 @@ private:
     int m_valueSteerAccurancy;
     int m_valueEngineTemperature;
     int m_valueEngineAccurancy;
+    int m_valueBatteryTemperature;
+    int m_valueBatteryAccurancy;
+    int m_valueBatteryPercent;
+
+    bool m_valueUnderLightsOn;
+    bool m_valueCheckEngineOn;
+    bool m_valueAlarmOn;
 };
 
 #endif // APPDATA_H

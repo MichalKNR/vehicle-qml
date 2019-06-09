@@ -2,8 +2,22 @@
     <qresource prefix="/">
         <file alias="main.cpp">main.cpp</file>
         <file alias="backend.cpp">backend.cpp</file>
-        <file>qml/main.qml</file>
         <file>backend.h</file>
-        <file>samochodzik.png</file>
+        <file>qml/helper/MyCircualGauge.qml</file>
+        <file>qml/Main.qml</file>
+        <file>app-data.cpp</file>
+        <file>app-data.h</file>
+        <file>net-manager.cpp</file>
+        <file>net-manager.h</file>
+        <file>qml/helper/ReferenceLine.qml</file>
+        <file>images/samochodzik.png</file>
+        <file>images/empty_battery.png</file>
+        <file>qml/helper/Battery.qml</file>
+        <file>images/wifi-connection-signal-symbol.svg</file>
+        <file>images/notification (1).svg</file>
+        <file>images/notification.svg</file>
+        <file>images/checkEngine.png</file>
+        <file>images/car-lights.svg</file>
+        <file>qml/helper/Icon.qml</file>
     </qresource>
 </RCC>

@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
     BackEnd backEnd(&engine);
 
-    engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/qml/Main.qml")));
 
     return a.exec();
 }

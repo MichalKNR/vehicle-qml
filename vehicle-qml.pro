@@ -44,4 +44,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    qml/main.qml
+    qml/helper/MyCircualGauge.qml \
+    qml/Main.qml \
+    qml/helper/ReferenceLine.qml \
+    qml/helper/Battery.qml \
+    qml/helper/Icon.qml

@@ -24,6 +24,28 @@ void AppData::newRequest(QJsonDocument doc) {
     } else if (valueId == "EngineAccurancy") {
         m_valueEngineAccurancy = doc.object().value("value").toInt();
         emit valueEngineAccuranacyChanged();
+    } else if (valueId == "BatteryTemperature") {
+        m_valueBatteryTemperature = doc.object().value("value").toInt();
+        emit valueBatteryTemperatureChanged();
+    } else if (valueId == "BatteryAccurancy") {
+        m_valueBatteryAccurancy = doc.object().value("value").toInt();
+        emit valueBatteryAccuranacyChanged();
+    } else if (valueId == "BatteryPercent") {
+        m_valueBatteryPercent = doc.object().value("value").toInt();
+        emit valueBatteryPercentChanged();
+
+    } else if (valueId == "UnderLightsOn") {
+        m_valueUnderLightsOn = doc.object().value("value").toBool();
+        emit valueUnderLightsOnChanged();
+
+    } else if (valueId == "CheckEngineOn") {
+        m_valueCheckEngineOn = doc.object().value("value").toBool();
+        emit valueCheckEngineOnChanged();
+
+    } else if (valueId == "AlarmOn") {
+        m_valueAlarmOn = doc.object().value("value").toBool();
+        emit valueAlarmOnChanged();
+
     } else {
         qDebug() << "AppData::newRequest unknown valueId" << valueId;
     }
@@ -34,24 +56,4 @@ void AppData::setServerConnected(bool connected) {
     qDebug() << "server connected = " << connected;
     m_server_connected = connected;
     emit serverConnectedChanged();
-}
-
-int AppData::getValueSpeed() {
-    return m_value_speed;
-}
-
-int AppData::getValueSteerTemperature() {
-    return m_valueSteerTemperature;
-}
-
-int AppData::getValueSteerAccurancy() {
-    return m_valueSteerAccurancy;
-}
-
-int AppData::getValueEngineTemperature() {
-    return m_valueEngineTemperature;
-}
-
-int AppData::getValueEngineAccurancy() {
-    return m_valueEngineAccurancy;
 }
