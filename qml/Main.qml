@@ -1,7 +1,6 @@
 import QtQuick 2.5
 import QtQuick.Window 2.2
 import QtQuick.Controls.Styles 1.4
-import QtGraphicalEffects 1.12
 import QtQuick.Extras 1.4
 import QtCharts 2.2
 import "helper"
@@ -11,8 +10,7 @@ import "helper"
 Window {
     visible: true
     id: root
-    width: 1366
-    height: 768
+    visibility: "FullScreen"
     color: Qt.rgba(0, 0, 0, 1);
 
     MyCircualGauge {
@@ -59,6 +57,7 @@ Window {
     }
 
     ChartView {
+        id: chartView
         x: parent.width * 0.03
         y: parent.height * 0.6
         width: parent.width * 0.35
@@ -87,7 +86,7 @@ Window {
         width: parent.width * 0.05
         height: width
 
-        image: "../../images/notification.svg"
+        image: "../../images/notificationWhite.png"
         active: AppData.valueAlarmOn
         normalMultplier: 0.3
     }
@@ -98,7 +97,7 @@ Window {
         anchors.right: iconAlarm.left
         width: parent.width * 0.05
         height: width
-        image: "../../images/car-lights.svg"
+        image: "../../images/car-lightsWhite.png"
         active: AppData.valueUnderLightsOn
     }
 
@@ -108,7 +107,7 @@ Window {
         anchors.right: iconUnderLights.left
         width: parent.width * 0.05
         height: width
-        image: "../../images/checkEngine.png"
+        image: "../../images/checkEngineWhite.png"
         active: AppData.valueCheckEngineOn
     }
 
@@ -119,7 +118,7 @@ Window {
         width: parent.width * 0.05
         height: width
 
-        image: "../../images/wifi-connection-signal-symbol.svg"
+        image: "../../images/wifi-connection-signal-symbolWhite.png"
         active: !AppData.server_connected
         normalMultplier: 0.4
         activeMultiplier: 0.5

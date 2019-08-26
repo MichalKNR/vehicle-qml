@@ -8,7 +8,7 @@
 class NetManager: public QObject {
     Q_OBJECT
 public:
-    NetManager(QObject *parent);
+    NetManager(QObject *parent, QString server_ip, int server_port);
     int     connected;
 public slots:
     void init();
@@ -35,8 +35,8 @@ private:
     int         ping_missed;
     QDateTime   last_ping;
 
-    QString serverIp = "127.0.0.1";
-    int serverPort = 1234;
+    QString serverIp;
+    int serverPort;
 };
 
 #endif // NETMANAGER_H

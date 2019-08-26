@@ -1,10 +1,14 @@
 #include "net-manager.h"
 
-NetManager::NetManager(QObject *parent):QObject(parent) {
+NetManager::NetManager(QObject *parent, QString server_ip, int server_port):QObject(parent) {
     dataSize=0;
     socket=new QTcpSocket(this);
     connected=0;
     ping_missed=0;
+
+    this->serverIp = server_ip;
+    this->serverPort = server_port;
+    qDebug() << "NetManager::NetManager serverIp = " << this->serverIp << ", serverPort = " << this->serverPort;
 
     connect(socket,SIGNAL(stateChanged(QAbstractSocket::SocketState)),this,SLOT(socketStateChanged(QAbstractSocket::SocketState)));
     connect(socket,SIGNAL(error(QAbstractSocket::SocketError)),this,SLOT(socketError(QAbstractSocket::SocketError)));

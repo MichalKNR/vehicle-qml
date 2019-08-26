@@ -19,5 +19,9 @@
         <file>images/checkEngine.png</file>
         <file>images/car-lights.svg</file>
         <file>qml/helper/Icon.qml</file>
+        <file>images/wifi-connection-signal-symbolWhite.png</file>
+        <file>images/notificationWhite.png</file>
+        <file>images/checkEngineWhite.png</file>
+        <file>images/car-lightsWhite.png</file>
     </qresource>
 </RCC>

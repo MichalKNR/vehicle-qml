@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import QtGraphicalEffects 1.12
 
 Rectangle {
     id: imageRect
@@ -8,37 +7,26 @@ Rectangle {
     property double normalMultplier: 0.5
     property double activeMultiplier: 0.7
 
-    property string activeColor: "red"
-    property string inactiveColor: "white"
+    property color activeColor: "red"
+    property color inactiveColor: "black"
 
     anchors.top: parent.top
     anchors.right: parent.right
     width: parent.width * 0.05
     height: width
-    color: "black"
+    color: (active) ? activeColor : inactiveColor
     Image {
         id: iconImage
         anchors.centerIn: parent
         width: parent.width * ((active)? activeMultiplier: normalMultplier)
         height: width
-        source: image
+        source: imageRect.image
     }
-    ColorOverlay {
-        id: colorOverlay
-        anchors.fill: iconImage
-        source: iconImage
-        color: (active)? activeColor : inactiveColor
-    }
-
-    onActiveChanged: {
-        if (active) {
-            colorOverlay.color = activeColor
-        } else {
-            colorOverlay.color = inactiveColor
-        }
-    }
-
-    onImageChanged: {
-        iconImage.source = imageRect.image
-    }
+// this component is not working on Raspberry - do sth wrong?
+//    ColorOverlay {
+//        id: colorOverlay
+//        anchors.fill: iconImage
+//        source: iconImage
+//        color: (active)? activeColor : inactiveColor
+//    }
 }

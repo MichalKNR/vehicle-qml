@@ -19,6 +19,7 @@ private:
     QQmlContext* context;
     NetManager* netManager;
     AppData* appData;
+    QSettings* settings;
 };
 
 #endif // BACKEND_H

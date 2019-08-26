@@ -1,3 +1,5 @@
 *.o
 moc*
-
+*.pro.user
+MakeFile
+.qmake.stash
