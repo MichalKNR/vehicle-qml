@@ -23,5 +23,7 @@
         <file>images/notificationWhite.png</file>
         <file>images/checkEngineWhite.png</file>
         <file>images/car-lightsWhite.png</file>
+        <file>images/samochodzik1.png</file>
+        <file>images/emakspower_white.png</file>
     </qresource>
 </RCC>

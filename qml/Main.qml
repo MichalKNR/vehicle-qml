@@ -16,14 +16,27 @@ Window {
     MyCircualGauge {
         id: circularGauge
         size: parent.width * 0.3
-        y: parent.y + 0.05 * parent.height
+        y: parent.y + 0.09 * parent.height
         x: parent.x + 0.05 * parent.width
+    }
+
+    Image {
+        id: logoEmaxPower
+        width: parent.width * 0.4
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        fillMode: Image.PreserveAspectFit
+        source: "qrc:/images/emakspower_white.png"
     }
 
 
     Image {
-        anchors.centerIn: parent
-        source: "../images/samochodzik.png"
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: parent.height * 0.01
+        height: parent.height * 0.85
+        source: "../images/samochodzik1.png"
+        fillMode: Image.PreserveAspectFit
     }
 
     // steer
@@ -37,13 +50,14 @@ Window {
     ReferenceLine {
         value_name: "engine"
         xPosition: parent.width / 2
-        yPosition: parent.height * 0.75
+        yPosition: parent.height * 0.85
     }
 
 
 
     Battery {
-        anchors.centerIn: parent
+        x: parent.width / 2 - width / 2
+        y: parent.height * 0.65 - height / 2
         batteryColor: "grey"
         width: parent.width * 0.04
         height: parent.height * 0.1
@@ -53,7 +67,7 @@ Window {
     ReferenceLine {
         value_name: "battery"
         xPosition: parent.width / 2
-        yPosition: parent.height * 0.5
+        yPosition: parent.height * 0.65
     }
 
     ChartView {
